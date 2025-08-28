@@ -1,16 +1,17 @@
 /* Calculator Container */
-body{
+body {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: rgba(33, 0, 19, 0.6);
+  overflow: hidden;
+  background-color: rgba(74, 39, 59, 0.6);
 }
 .calculator {
   width: 400px;
   background: #f2f2f2;
   border-radius: 12px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  box-shadow: 0 6px 15px rgba(139, 138, 138, 0.8);
   overflow: hidden;
   font-family: Arial, sans-serif;
 }
@@ -19,13 +20,21 @@ body{
 .display {
   background: #222;
   color: white;
+  overflow-x: auto;
+  overflow-y: hidden;
   font-size: 2rem;
   text-align: right;
   padding: 30px 15px;
   height: 90px;
   box-sizing: border-box;
+  
 }
-
+::-webkit-scrollbar{
+  height: 7px;
+}
+  ::-webkit-scrollbar-thumb{
+    background-color: #f153aa;
+  }
 /* Buttons Grid */
 .buttons {
   display: grid;
@@ -59,11 +68,10 @@ button.op {
 button.equal {
   background: #f153aa;
   color: white;
-  /* grid-row: span 1; Make it tall like in the image */
   font-size: 1.6rem;
 }
 
-/* Special Button (CE, . , 0) */
+/* Special Button (CE,,DEL . , 0) */
 button.special {
   background: #fafafa;
 }
