@@ -1,7 +1,7 @@
 let contener = document.getElementById("contaner");
 let screen = document.getElementById("display");
 let justCalculated = true;
-const operators = ["+", "*", "/"];
+const operators = ["+", "*", "/","(",")"];
 let op = ["+", "*", "/", "-"];
 
 contener.addEventListener("click", function (e) {
@@ -64,7 +64,7 @@ function calc() {
   }
 }
 document.addEventListener("keydown", function (e) {
-  if (!isNaN(e.key) || ["+", "-", "*", "/", "."].includes(e.key)) {
+  if (!isNaN(e.key) || ["+", "-", "*", "/", ".", "(", ")"].includes(e.key)) {
     add(e.key);
   }
   if (e.key === "Escape") {
