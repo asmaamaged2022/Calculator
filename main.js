@@ -1,7 +1,7 @@
 let contener = document.getElementById("contaner");
 let screen = document.getElementById("display");
 let justCalculated = true;
-const operators = ["+", "*", "/","(",")"];
+const operators = ["+", "*", "/"];
 let op = ["+", "*", "/", "-"];
 
 contener.addEventListener("click", function (e) {
@@ -33,7 +33,7 @@ function add(value) {
   }
 
   if (justCalculated) {
-    if (!isNaN(value) || value === "." || value === "-") {
+    if (!isNaN(value) || value === "." || value === "-" || value === "("||value === ")") {
       screen.textContent = value;
     } else if (screen.textContent.trim() === "" && operators.includes(value)) {
       return;
